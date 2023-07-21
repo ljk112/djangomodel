@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image</title>
+</head>
+<body>
+    <form method="POST" action="{% url 'upload' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="image" accept="image/*"><br><br>
+        <input type="radio" name="model" value="generator1" checked>훈련한 srgan<br>
+        <input type="radio" name="model" value="generator2"> srgan<br><br>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
